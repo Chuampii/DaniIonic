@@ -1,0 +1,7 @@
+{
+  "name": "SkateTricks",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "vue-vite"
+}
