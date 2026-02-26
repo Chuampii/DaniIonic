@@ -25,7 +25,7 @@
 <script setup lang="ts">
 import { IonPage, IonContent, IonButton } from '@ionic/vue';
 import { useRouter } from 'vue-router';
-import imagenEstacionamiento from '/images/parking.png';
+import imagenEstacionamiento from '/images/parkingfondo.png';
 
 const router = useRouter();
 

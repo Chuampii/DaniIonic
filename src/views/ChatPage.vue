@@ -8,10 +8,10 @@
         </button>
         <h1 class="header-title">Mensajes</h1>
         <div class="header-actions">
-          <button class="edit-button">EDITAR</button>
-          <button class="add-chat-button">
-            <span class="chat-plus">CHAT +</span>
-          </button>
+          <button class="edit-button" @click="irAEditarPerfil">EDITAR</button>
+            <button class="add-chat-button" @click="irAChatList">
+              <span class="chat-plus">CHAT +</span>
+            </button>
         </div>
       </div>
 
@@ -70,11 +70,19 @@ const volver = () => {
   router.back();
 };
 
+const irAEditarPerfil = () => {
+  router.push('/editar-perfil');
+};
+
 const abrirChat = (chat: any) => {
   if (chat.id === 1) {
     // Solo abrir chat si es Daniel (id 1)
     router.push(`/chat/${chat.id}`);
   }
+};
+
+const irAChatList = () => {
+  router.push('/chat-list');
 };
 </script>
 

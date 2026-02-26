@@ -10,6 +10,9 @@ import MenuPage from '../views/MenuPage.vue'
 import MapaPage from '../views/MapaPage.vue'
 import ChatPage from '../views/ChatPage.vue'
 import ChatDetailPage from '../views/ChatDetailPage.vue'
+import ChatListPage from '../views/ChatListPage.vue'
+import AparcarPage from '../views/AparcarPage.vue'
+import EditProfilePage from '../views/EditProfilePage.vue'
 const routes: Array<RouteRecordRaw> = [
   {
     path: '/',
@@ -64,6 +67,21 @@ const routes: Array<RouteRecordRaw> = [
     path: '/chat/:id',
     name: 'ChatDetail',
     component: ChatDetailPage
+  },
+  {
+    path: '/chat-list',
+    name: 'ChatList',
+    component: ChatListPage
+  },
+  {
+    path: '/aparcar',
+    name: 'Aparcar',
+    component: AparcarPage
+  },
+  {
+    path: '/editar-perfil',
+    name: 'EditProfile',
+    component: EditProfilePage
   }
 ]
 

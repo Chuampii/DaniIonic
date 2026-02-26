@@ -56,8 +56,7 @@ const router = useRouter();
 const showProfileOverlay = ref(false);
 
 const aparcar = () => {
-  console.log('Abriendo formulario de aparcar...');
-  // Aquí irá la lógica para aparcar
+  router.push('/aparcar');
 };
 
 const buscarDonde = () => {
