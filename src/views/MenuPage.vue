@@ -1,12 +1,10 @@
 <template>
   <ion-page>
     <ion-content :fullscreen="true" class="menu-content">
-      <!-- Imagen del estacionamiento -->
       <div class="parking-section">
         <img :src="imagenEstacionamiento" alt="Estacionamiento" class="parking-image" />
       </div>
 
-      <!-- Botones -->
       <div class="buttons-container">
         <ion-button expand="block" class="menu-button salir-button" @click="salir">
           SALIR
@@ -100,7 +98,6 @@ ion-button.volver-button {
   order: 3;
 }
 
-/* Responsive */
 @media (max-width: 600px) {
   .buttons-container {
     padding: 20px 15px;

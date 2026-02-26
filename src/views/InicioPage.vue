@@ -5,18 +5,44 @@
         <img :src="imagenFondo" alt="Background" class="background-image" />
       </div>
       
-      <!-- Botón de perfil en esquina superior izquierda -->
       <button class="profile-button" @mousedown="mostrarPerfilOverlay" @touchstart="mostrarPerfilOverlay" @mouseup="ocultarPerfilOverlay" @touchend="ocultarPerfilOverlay" @mouseleave="ocultarPerfilOverlay">
         <img :src="fotoperfil" alt="Perfil" class="profile-image" />
       </button>
       
-      <!-- Overlay de perfil -->
       <div v-if="showProfileOverlay" class="profile-overlay">
         <img :src="fotoperfil" alt="Perfil" class="overlay-profile-image" />
       </div>
       
       <div class="inicio-container">
-        <!-- Botones de acciones principales -->
+        <div class="swiper-section">
+          <swiper
+            :slides-per-view="1"
+            :space-between="10"
+            :pagination="{ clickable: true }"
+            :navigation="true"
+            class="swiper-gallery"
+          >
+            <swiper-slide>
+              <div class="slide-content">
+                <div class="slide-title">Bienvenido</div>
+                <div class="slide-description">Estaciona tu vehículo de forma segura</div>
+              </div>
+            </swiper-slide>
+            <swiper-slide>
+              <div class="slide-content clickable-slide" @click="irAAparcar">
+                <div class="slide-title">Encuentra Plazas</div>
+                <div class="slide-description">Localiza plazas de aparcamiento disponibles</div>
+              </div>
+            </swiper-slide>
+            <swiper-slide>
+              <div class="slide-content clickable-slide" @click="irAChat">
+                <div class="slide-title">Comunica</div>
+                <div class="slide-description">Contacta con otros usuarios fácilmente</div>
+              </div>
+            </swiper-slide>
+          </swiper>
+        </div>
+
         <div class="buttons-section">
           <button class="action-button aparcar-button" @click="aparcar">
             APARCAR
@@ -26,16 +52,13 @@
           </button>
         </div>
 
-        <!-- Sección inferior con menú -->
         <div class="bottom-section">
         </div>
         
-        <!-- Botón de menú en esquina inferior derecha -->
         <button class="menu-button" @click="abrirMenu">
           <img :src="unionIcon" alt="Menu" class="menu-image" />
         </button>
         
-        <!-- Botón cerrar sesión al final -->
         <button class="close-session-btn" @click="cerrarSesion">
           cerrar sesión
         </button>
@@ -48,6 +71,11 @@
 import { IonPage, IonContent } from '@ionic/vue';
 import { useRouter } from 'vue-router';
 import { ref } from 'vue';
+import { Swiper, SwiperSlide } from 'swiper/vue';
+import { Navigation, Pagination, Autoplay } from 'swiper/modules';
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
 import imagenFondo from '/images/fondo.png';
 import unionIcon from '/images/Union.png';
 import fotoperfil from '/images/fotoperfil.png';
@@ -69,6 +97,14 @@ const abrirMenu = () => {
 
 const cerrarSesion = () => {
   router.push('/iniciar-sesion');
+};
+
+const irAAparcar = () => {
+  router.push('/aparcar');
+};
+
+const irAChat = () => {
+  router.push('/chat');
 };
 
 const mostrarPerfilOverlay = () => {
@@ -252,7 +288,55 @@ const ocultarPerfilOverlay = () => {
   border-radius: 0;
 }
 
-/* Responsive */
+.swiper-section {
+  width: 100%;
+  margin-bottom: 30px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.swiper-gallery {
+  width: 100%;
+  height: 180px;
+}
+
+.slide-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  background: #808080;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.slide-content.clickable-slide {
+  cursor: pointer;
+}
+
+.slide-content.clickable-slide:active {
+  background: #6d6d6d;
+  transform: scale(0.98);
+}
+
+.slide-title {
+  font-size: 24px;
+  font-weight: 900;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.slide-description {
+  font-size: 14px;
+  font-weight: 500;
+  opacity: 0.9;
+}
+
 @media (max-width: 600px) {
   .inicio-container {
     padding: 30px 15px 70px 15px;

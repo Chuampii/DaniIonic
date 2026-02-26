@@ -1,7 +1,6 @@
 <template>
   <ion-page>
     <ion-content :fullscreen="true" class="chat-detail-content">
-      <!-- Header -->
       <div class="chat-header">
         <button class="back-button" @click="volver">
           <ion-icon :icon="arrowBack"></ion-icon>
@@ -15,7 +14,6 @@
         </div>
       </div>
 
-      <!-- Mensajes -->
       <div class="messages-container">
         <div v-for="msg in messages" :key="msg.id" :class="['message', msg.sender === 'user' ? 'user-message' : 'contact-message']">
           <img v-if="msg.sender !== 'user'" :src="contact.avatar" :alt="contact.name" class="message-avatar" />
@@ -27,7 +25,6 @@
         </div>
       </div>
 
-      <!-- Input de mensaje -->
       <div class="message-input-container">
         <input 
           ref="messageInputRef"
@@ -100,7 +97,6 @@ const contactsMap: Record<string, any> = {
 
 const contact = contactsMap[param] || { name: 'Contacto', avatar: fotoperfil };
 
-// Daniel sample conversation (kept from original)
 const danielMessages = [
   { id: 1, sender: 'user', text: 'Hola Docente Daniel', image: null },
   { id: 2, sender: 'contact', text: 'Buenas querido alumno', image: null },
@@ -111,7 +107,6 @@ const danielMessages = [
   { id: 7, sender: 'user', text: 'Me alegra oir eso de usted', image: null }
 ];
 
-// Jhon conversation (from screenshot)
 const jhonMessages = [
   { id: 1, sender: 'user', text: 'Usted rallo mi vehiculo?', image: null },
   { id: 2, sender: 'contact', text: 'Negativo compañero de institucion', image: null },
@@ -142,6 +137,9 @@ const enviarMensaje = () => {
       if (container) container.scrollTop = container.scrollHeight;
     }, 0);
   }
+};
+
+const mostrarTeclado = () => {
 };
 </script>
 

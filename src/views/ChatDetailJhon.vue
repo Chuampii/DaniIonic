@@ -1,7 +1,6 @@
 <template>
   <ion-page>
     <ion-content :fullscreen="true" class="chat-detail-content">
-      <!-- Header -->
       <div class="chat-header">
         <button class="back-button" @click="volver">
           <ion-icon :icon="arrowBack"></ion-icon>
@@ -15,7 +14,6 @@
         </div>
       </div>
 
-      <!-- Mensajes -->
       <div class="messages-container">
         <div v-for="msg in messages" :key="msg.id" :class="['message', msg.sender === 'user' ? 'user-message' : 'contact-message']">
           <img v-if="msg.sender !== 'user'" :src="contact.avatar" :alt="contact.name" class="message-avatar" />
@@ -27,7 +25,6 @@
         </div>
       </div>
 
-      <!-- Input de mensaje -->
       <div class="message-input-container">
         <input 
           ref="messageInputRef"
@@ -68,7 +65,6 @@ const contact = {
   status: 'Online'
 };
 
-// messages will be filled later with the conversation you provide
 const messages = ref<any[]>([]);
 
 const volver = () => {
@@ -93,7 +89,6 @@ const enviarMensaje = () => {
 </script>
 
 <style scoped>
-/* reuse same styles as ChatDetailPage */
 .chat-detail-content {
   --background: #f5f5f5;
   display: flex;

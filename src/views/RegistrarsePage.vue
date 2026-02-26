@@ -6,12 +6,10 @@
       </div>
       
       <div class="register-container">
-        <!-- Titulo CREAR CUENTA -->
         <div class="title-section">
           <h1 class="crear-cuenta-title">CREAR CUENTA</h1>
         </div>
 
-        <!-- Formulario de registro -->
         <form class="register-form" @submit.prevent="handleRegister">
           <div class="form-group">
             <input
@@ -45,7 +43,6 @@
           </button>
         </form>
 
-        <!-- Link para login -->
         <div class="login-link">
           <router-link to="/iniciar-sesion">
             ¿Ya tienes cuenta? Inicia sesión
@@ -76,10 +73,8 @@ const handleRegister = async () => {
     return;
   }
 
-  // Aquí iría la lógica de registro (API call)
   console.log('Registrando usuario:', formData.value);
   
-  // Por ahora, solo redirigir a la página de inicio
   router.push('/inicio');
 };
 </script>

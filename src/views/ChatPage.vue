@@ -1,7 +1,6 @@
 <template>
   <ion-page>
     <ion-content :fullscreen="true" class="chat-content">
-      <!-- Header -->
       <div class="chat-header">
         <button class="back-button" @click="volver">
           <ion-icon :icon="arrowBack"></ion-icon>
@@ -15,7 +14,6 @@
         </div>
       </div>
 
-      <!-- Lista de chats -->
       <div class="chats-list">
         <div v-for="chat in chats" :key="chat.id" class="chat-item" @click="abrirChat(chat)">
           <img :src="chat.avatar" :alt="chat.name" class="chat-avatar" />
@@ -76,7 +74,6 @@ const irAEditarPerfil = () => {
 
 const abrirChat = (chat: any) => {
   if (chat.id === 1) {
-    // Solo abrir chat si es Daniel (id 1)
     router.push(`/chat/${chat.id}`);
   }
 };
@@ -226,7 +223,6 @@ const irAChatList = () => {
   margin-left: 8px;
 }
 
-/* Responsive */
 @media (max-width: 600px) {
   .chat-header {
     padding: 12px 15px;

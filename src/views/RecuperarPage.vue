@@ -6,12 +6,10 @@
       </div>
       
       <div class="auth-container">
-        <!-- Titulo -->
         <div class="title-section">
           <h1 class="auth-title">RECUPERAR CONTRASEÑA</h1>
         </div>
 
-        <!-- Formulario -->
         <div class="form-section">
           <ion-input 
             v-model="correo" 
@@ -20,7 +18,6 @@
             class="auth-input"
           ></ion-input>
 
-          <!-- Botón -->
           <router-link to="/recuperar-codigo">
             <ion-button expand="block" class="auth-button">
               ENVIAR CÓDIGO
@@ -127,7 +124,6 @@ ion-button.auth-button {
   padding: 14px 40px;
 }
 
-/* Responsive */
 @media (max-width: 600px) {
   .auth-container {
     padding: 30px 15px 20px 15px;

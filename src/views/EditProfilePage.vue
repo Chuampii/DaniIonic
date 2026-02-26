@@ -1,17 +1,14 @@
 <template>
   <ion-page>
     <ion-content :fullscreen="true" class="edit-profile-content">
-      <!-- Header con botón atrás -->
       <div class="edit-header">
         <button class="back-button" @click="volver">
           <ion-icon :icon="arrowBack"></ion-icon>
         </button>
       </div>
 
-      <!-- Contenedor principal -->
       <div class="edit-profile-container">
         
-        <!-- Foto de perfil -->
         <div class="photo-section">
           <img :src="profileData.foto" alt="Foto de perfil" class="profile-photo" />
           <button class="change-photo-button" @click="cambiarFoto">
@@ -26,10 +23,8 @@
           />
         </div>
 
-        <!-- Formulario de edición -->
         <form class="profile-form" @submit.prevent="guardarPerfil">
           
-          <!-- Campo Nombre -->
           <div class="form-group">
             <input
               v-model="profileData.nombre"
@@ -39,7 +34,6 @@
             />
           </div>
 
-          <!-- Campo Coche -->
           <div class="form-group">
             <input
               v-model="profileData.coche"
@@ -49,7 +43,6 @@
             />
           </div>
 
-          <!-- Campo Descripción "Sobre ti" -->
           <div class="form-group">
             <textarea
               v-model="profileData.descripcion"
@@ -58,7 +51,6 @@
             ></textarea>
           </div>
 
-          <!-- Botón SAVE -->
           <button type="submit" class="save-button">
             SAVE
           </button>
@@ -108,7 +100,6 @@ const handlePhotoChange = (event: Event) => {
 
 const guardarPerfil = () => {
   console.log('Guardando perfil:', profileData.value);
-  // Aquí iría la lógica para guardar los datos en una API o localStorage
   alert('Perfil guardado correctamente');
   router.back();
 };

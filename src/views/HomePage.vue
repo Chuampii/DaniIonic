@@ -6,12 +6,10 @@
       </div>
       
       <div class="home-container">
-        <!-- Titulo PARKED? -->
         <div class="title-section">
           <h1 class="parked-title">PARKED?</h1>
         </div>
 
-        <!-- Botones -->
         <div class="buttons-section">
           <router-link to="/iniciar-sesion">
             <ion-button expand="block" class="login-button">
@@ -110,7 +108,6 @@ ion-button.signup-button {
   padding: 16px 40px;
 }
 
-/* Responsive */
 @media (max-width: 600px) {
   .parked-title {
     font-size: 48px;
